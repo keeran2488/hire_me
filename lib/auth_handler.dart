@@ -20,7 +20,55 @@ class _AuthHandlerState extends State<AuthHandler> {
           key: _loginFormKey,
           child: ListView(
             children: <Widget>[
-              
+              Padding(
+                padding: EdgeInsets.all(20.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    icon: Icon(Icons.people),
+                    hintText: 'Email',
+                  ),
+                  onSaved: (value){
+                    _email = value;
+                  },
+                  validator: (value){
+                    if(value.isEmpty){
+                      return 'Please enter your email address.';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(20.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    icon: Icon(Icons.lock),
+                    hintText: 'Password',
+                  ),
+                  onSaved: (value){
+                    _password = value;
+                  },
+                  validator: (value){
+                    if(value.isEmpty){
+                      return 'Please enter your password.';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Padding(
+                padding: EdgeInsets.all(20.0),
+                child: RaisedButton(
+                  color: Colors.blue,
+                  onPressed: (){
+
+                  },
+                  child: Text("Sign up"),
+                ),
+              ),
             ],
           ),
         )
